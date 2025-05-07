@@ -31,36 +31,36 @@ app_ui = ui.page_fluid(
     ui.input_checkbox_group(
         "raw_data_files",
         "Select all that apply:",
-        choices=[
-            ("Staging Raw HL7 Data Files", "staging_hl7"),
-            ("Production Raw HL7 Data Files", "production_hl7"),
-            ("Staging Raw CSV Data Files", "staging_csv"),
-            ("Production Raw CSV Data Files", "production_csv"),
-            ("Staging Raw MOR Data Files", "staging_mor"),
-            ("Production Raw MOR Data Files", "production_mor"),
-        ]
+        {
+            "staging_hl7": "Staging Raw HL7 Data Files",
+            "production_hl7": "Production Raw HL7 Data Files",
+            "staging_csv": "Staging Raw CSV Data Files",
+            "production_csv": "Production Raw CSV Data Files",
+            "staging_mor": "Staging Raw MOR Data Files",
+            "production_mor": "Production Raw MOR Data Files"
+        }
     ),
 
     ui.h4("SQL Tables"),
     ui.input_checkbox_group(
         "sql_tables",
         "Select all that apply:",
-        choices=[
-            ("ESSENCE Application (Staging)", "essence_staging"),
-            ("ESSENCE Application (Production)", "essence_production"),
-            ("Archive – Raw (Staging)", "archive_raw_staging"),
-            ("Archive – Raw (Production)", "archive_raw_production"),
-            ("Archive – Processed (Staging)", "archive_processed_staging"),
-            ("Archive – Processed (Production)", "archive_processed_production"),
-            ("Archive – Exceptions (Staging)", "archive_exceptions_staging"),
-            ("Archive – Exceptions (Production)", "archive_exceptions_production"),
-            ("Mortality – Raw (Staging)", "mortality_raw_staging"),
-            ("Mortality – Raw (Production)", "mortality_raw_production"),
-            ("Mortality – Processed (Staging)", "mortality_processed_staging"),
-            ("Mortality – Processed (Production)", "mortality_processed_production"),
-            ("Mortality – Exceptions (Staging)", "mortality_exceptions_staging"),
-            ("Mortality – Exceptions (Production)", "mortality_exceptions_production"),
-        ]
+        {
+            "essence_staging": "ESSENCE Application (Staging)",
+            "essence_production": "ESSENCE Application (Production)",
+            "archive_raw_staging": "Archive – Raw (Staging)",
+            "archive_raw_production": "Archive – Raw (Production)",
+            "archive_processed_staging": "Archive – Processed (Staging)",
+            "archive_processed_production": "Archive – Processed (Production)",
+            "archive_exceptions_staging": "Archive – Exceptions (Staging)",
+            "archive_exceptions_production": "Archive – Exceptions (Production)",
+            "mortality_raw_staging": "Mortality – Raw (Staging)",
+            "mortality_raw_production": "Mortality – Raw (Production)",
+            "mortality_processed_staging": "Mortality – Processed (Staging)",
+            "mortality_processed_production": "Mortality – Processed (Production)",
+            "mortality_exceptions_staging": "Mortality – Exceptions (Staging)",
+            "mortality_exceptions_production": "Mortality – Exceptions (Production)"
+        }
     ),
     ui.input_text_area("other_sql_tables", "Other SQL tables (please specify):", rows=2),
 
