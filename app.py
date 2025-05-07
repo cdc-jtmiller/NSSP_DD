@@ -68,6 +68,18 @@ app_ui = ui.page_fluid(
     ui.panel_title("Data Identification SQL Query"),
     ui.input_text_area("sql_query", "Please indicate the specific SQL queries that can be used to identify the data to be deleted.", rows=4),
 
+    ui.hr(),
+    ui.panel_title("Total Records Affected"),
+    ui.input_checkbox_group(
+        "records_affected_type",
+        "Select the type(s) of records affected:",
+        {
+            "hl7": "HL7 messages",
+            "visits": "Visits (line-level data)",
+            "both": "Both"
+        }
+    ),
+    ui.input_text("records_affected_count", "Enter the total number of records affected (*mandatory--a number MUST be provided for processing):"),
 
     ui.hr(),
     ui.input_action_button("submit", "Submit Request", class_="btn-primary"),
@@ -95,7 +107,7 @@ def server(input, output, session):
                     ui.tags.li(f"Other SQL Tables: {input.other_sql_tables()}"),
                     ui.tags.li(f"SQL Query: {input.sql_query()}"),
                     ui.tags.li(f"Records Affected Type: {', '.join(input.records_affected_type())}"),
-                    ui.tags.li(f"Records Affected Count: {input.records_affected_count()}"),
+                    ui.tags.li(f"Records Affected Count: {input.records_affected_count()}")
                 )
             )
         )
