@@ -9,6 +9,7 @@ app_ui = ui.page_fluid(
     ui.input_text("name", "Name"),
     ui.input_text("role", "Role (e.g., Epidemiologist, Jurisdiction Administrator)"),
     ui.input_text("email", "Email"),
+    ui.input_text("phone", "Phone Number"),
     ui.input_text("site", "Site"),
     ui.input_date("submission_date", "Date of Submission", value=datetime.date.today()),
 
@@ -79,7 +80,7 @@ app_ui = ui.page_fluid(
             "both": "Both"
         }
     ),
-    ui.input_text("records_affected_count", "Enter the total number of records affected (*mandatory--a number MUST be provided for processing):"),
+    ui.input_text("records_affected_count", "Enter the total number of records affected:"),
 
     ui.hr(),
     ui.input_action_button("submit", "Submit Request", class_="btn-primary"),
@@ -98,6 +99,7 @@ def server(input, output, session):
                     ui.tags.li(f"Name: {input.name()}"),
                     ui.tags.li(f"Role: {input.role()}"),
                     ui.tags.li(f"Email: {input.email()}"),
+                    ui.tags.li(f"Phone: {input.phone()}"),
                     ui.tags.li(f"Site: {input.site()}"),
                     ui.tags.li(f"Date of Submission: {input.submission_date()}"),
                     ui.tags.li(f"Reason for Deletion: {input.reason()}"),
