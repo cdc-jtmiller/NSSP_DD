@@ -1,2 +1,2 @@
-from shiny import App, ui, render, reactive  
-import datetime
+shiny>=0.5.1  
+python-dateutil>=2.8.2
