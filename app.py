@@ -72,7 +72,20 @@ app_ui = ui.page_fluid(
     ui.input_action_button("submit", "Submit Request", class_="btn-primary"),
 
     ui.output_ui("confirmation")
-)
+
+    ui.hr(),
+    ui.panel_title("Total Records Affected"),
+    ui.input_checkbox_group(
+      "records_affected_type",
+      "Select the type(s) of records affected:",
+      {
+        "hl7": "HL7 messages",
+        "visits": "Visits (line-level data)",
+        "both": "Both"
+      }
+    ),
+    ui.input_text("records_affected_count", "Enter the total number of records affected:"),
+    )
 
 def server(input, output, session):
     @reactive.event(input.submit)
